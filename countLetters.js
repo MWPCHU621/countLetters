@@ -18,4 +18,25 @@ function countLetters(string)
   return wordObject
 }
 
-console.log(countLetters("lighthouse in the house"));
+function letterPosition(string)
+{
+  var wordObject = {};
+  var cleanWord = string.split(" ").join("");
+  console.log(cleanWord);
+  for(var i = 0; i < cleanWord.length; i++)
+  {
+    if(wordObject[cleanWord[i]] === undefined)
+    {
+      wordObject[cleanWord[i]] = [i];
+    }
+    else
+    {
+      wordObject[cleanWord[i]].push(i);
+    }
+  }
+
+  return wordObject;
+}
+
+//console.log(countLetters("lighthouse in the house"));
+console.log(letterPosition("lighthouse in the house"));
